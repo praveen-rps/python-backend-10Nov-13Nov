@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Books Catalogue</title>
+    <style>
+        body{
+            font-family: Aria sans-serif;
+            background-color: #f4f7fc;
+            margin: 40px;
+        }
+        h2{
+            text-align: center;
+            color: #2c3e50;
+        }
+        table{
+            margin: 0px auto;
+            width: 70%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th,td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th{
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even){
+                background-color: #f8f9fa;
+        }
+        tr:hover{
+            background-color: #e9f5ff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Books List</h2>
+    <table>
+        <tr>
+            <th>Book Id</th>
+            <th>Book Name</th>
+            <th>Book Author</th>
+            <th>Actions</th>
+            
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{book.bookid}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>
+                <a href="/edit/{{book.bookid}}">Edit</a>
+                 <a href="/delete/{{book.bookid}}">Delete</a>
+            </td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+    <p align="center"><a href="/">Home</a></p>
+</body>
+</html>

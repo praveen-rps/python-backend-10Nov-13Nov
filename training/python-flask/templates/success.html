@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <h2 style="color:green"> Login Success, Welcome {{user}}</h2>
+       {% if user == 'praveen'  %}
+       <h2> The role is Admin</h2>
+       {% else %}
+       <h2> The role is End User </h2> 
+       {% endif %}
+       
+    </body>
+</html>
